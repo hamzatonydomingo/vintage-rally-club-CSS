@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="icofont/icofont.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body class="register">
+	<header>
+		<div class="h1">
+			<span class="cover"></span>
+			<h1>register online</h1>
+		</div>
+	</header>
+	<nav>
+		<div><a href="index.html" accesskey="1"><span class="icofont-home"></span>home</a></div>
+		<div><a href="drivers.html" accesskey="2">our drives</a></div>
+		<div class="active"><a href="register.html" accesskey="3">register online</a></div>
+		<div><a href="about.html" accesskey="4">about us</a></div>
+		<div><a href="Q&A.html" accesskey="5">Q&A</a></div>
+		<div><a href="contact.html" accesskey="6">contact us</a></div>
+	</nav>
+	<main>
+		<section>
+			<h2>overview of stages for the rally</h2>
+			<ol>
+				<li>the rally starts at <time>07:00</time>AM and we will start by showing you our most expensive vintage cars at the rally</li>
+				<li>at midday our drivers will drive vintage sports cars to see which is the fastest</li>
+				<li>after that is done we will then finally show you the best vintage car ever created in the world</li>
+			</ol>
+		</section>
+		<section>
+			<h2>countries the rally will take place</h2>
+			<ul>
+				<li>united kindom</li>
+				<li>irland</li>
+				<li>italy</li>
+				<li>mozambique</li>
+				<li>malawi</li>
+			</ul>
+		</section>
+		<form class="booking-form">
+			<h2>book now</h2>
+			<div class="form-group">
+				<label for="fname">first name</label>
+				<input type="text" placeholder="first name" minlength="2" required="" id="fname">			
+			</div>
+			<div class="form-group">
+				<label for="lname">last name</label>
+				<input type="text" required="" minlength="2" placeholder="last name" id="lname">				
+			</div>
+			<div class="form-group">
+				<label for="age">age</label>
+				<input type="number" required="" min="10" max="90" id="age" value="10">
+			</div>
+			<fieldset class="form-group">
+				<legend>Gender</legend>
+				<span class="radio">
+					<label for="male">male </label>
+					<input type="radio" value="male" name="gender" required="" id="male" class="hidden">					
+					<span class="button">
+						<span class="child"></span>
+					</span>
+				</span>
+				<span class="radio">
+					<label for="female">female </label>
+					<input type="radio" value="female" required="" name="gender" id="female" class="hidden">				
+					<span class="button">
+						<span class="child"></span>
+					</span>
+				</span>
+			</fieldset>
+			<div class="form-group">
+				<label for="email">email</label>
+				<input type="email" name="email" placeholder="email" required="" id="email">	
+			</div>
+			<div class="form-group">
+				<label for="phone">phone</label>
+				<input type="text" name="phone" placeholder="phone number" minlength="10" maxlength="10" required="" id="phone">		
+			</div>
+			<div class="form-group">
+				<label for="password">password</label>
+				<input type="password" placeholder="enter password" required="" id="password">			
+			</div>
+			<div class="form-group">
+				<label>country for rally</label>
+				<select title="select the country for the rally">
+					<option value="irland">irland</option>
+					<option value="italy">italy</option>
+					<option value="mozambique">mozambique</option>
+					<option value="united kingdom">united kingdom</option>
+					<option value="malawi">malawi</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input type="submit" name="submit" value="book">
+			</div>
+		</form>
+	</main>
+	<footer>
+		<section class="contacts-section">
+			<h2>contacts us</h2>
+			<div class="content">
+				<div class="whatsap">
+					<a title="whatsapp phone" class="icofont-brand-whatsapp"></a>
+					<span>0888885555</span>				
+				</div>
+				<div class="email">
+					<a title="email details" class="icofont-mail-box"></a>
+					<span>vintage@yahoo.com</span>
+				</div>
+				<div class="phone">
+					<a title="phone number" class="icofont-ui-dial-phone"></a>
+					<span>09999955555</span>
+				</div>
+
+			</div>
+		</section>
+		<section class="links-section">
+			<h2>follow us</h2>
+			<div class="content">
+				<div><a href="#" title="facebook link" class="icofont-facebook"></a></div>
+				<div><a href="#" title="twitter link" class="icofont-twitter"></a></div>
+				<div><a href="#" title="instagram link" class="icofont-instagram"></a></div>	
+			</div>
+
+		</section>
+
+		<div class="copyright">
+			copyright &copy; 2021 all rights reserved
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,817 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+body {
+	font-size: 14px;
+	font-family: sans-serif;
+}
+input:focus {
+	outline: solid black;
+}
+.hidden {
+	display: none;
+}
+header {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+    background: black;
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0px black;
+}
+header + * {
+	margin-top: 95px;
+	background: black;
+}
+header .h1 {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+header h1 {
+	text-shadow: 2px 2px;
+	color: white;
+    padding: 20px;
+    width: 100%;
+    font-size: 370%;
+}
+header .cover {
+	box-shadow: inset 0 0 21px 25px #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 1;
+}
+nav {
+	text-align: center;
+	float: left;
+	width: 100%;
+	padding: 10px;
+}
+nav > div {
+	height: 50px;
+	display: inline-block;
+	overflow: hidden;
+}
+nav a {
+	display: inline-block;
+	padding: 10px;
+	border-radius: 5px;
+	text-decoration: none;
+	background: #fefefe;
+	font-size: 140%;
+	color: black;
+	transition: 0.4s ease;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+ nav a:focus {
+ 	outline: solid gray 4px;
+}
+ nav div.active a {
+	background: #000;
+	color: white;
+	text-decoration: underline;
+	font-weight: bold;
+}
+nav a:hover, nav div.active a {
+	border-radius: 0;
+	font-size: 180%;
+	box-shadow: inset 0 0 21px 7px #000;
+}
+header .search {
+	z-index: 2;
+	width: 25%;
+	right: 2%;
+	position: absolute;
+	text-align: right;
+	line-height: 100px;
+}
+header .search > * {
+	display: inline-block;
+	border: solid 1.5px black;
+	padding: 3px;
+}
+header .search input {
+	width: 40%;
+	outline: none;
+	font-size: 165%;
+	margin-right: 10px;
+	transition: 0.4s ease;
+}
+header > .search input:focus {
+	width: 80%;
+	background: black;
+	color: white;
+	box-shadow: 0 0 6px 3px #ccc;
+}
+main, footer {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+footer {
+	margin-top: 40px;
+	background: black;
+	color: white;
+}
+footer > section {
+	float: left;
+	width: 50%;
+	overflow: hidden;
+}
+footer > section:nth-child(2) {
+	border-right: solid 2px black;
+	background: black;
+}
+footer > section h2, footer > section > .content {
+	padding: 15px;
+	text-align: center;
+	width: 100%;
+	float: left;
+}
+footer > section h2 {
+	font-size: 200%;
+}
+footer > .contacts-section > .content {
+	text-align: left;
+	font-size: 200%;
+}
+footer > .contacts-section > .content > div > a:first-child {
+	box-shadow: inset 0 0 21px 7px #000;
+	vertical-align: middle;
+	font-size: 250%;
+}
+footer > .contacts-section > .content > div {
+	padding: 10px;
+}
+footer .links-section > .content > div {
+	padding: 17px;
+}
+footer .links-section a {
+	padding: 10px;
+	color: #fff;
+	font-size: 500%;
+	text-decoration: none;
+	transition: 1s;
+}
+footer .links-section a:hover {
+	box-shadow: inset 0 0 21px 7px #000;
+	border-radius: 0;
+	background: white;
+	color: black;
+}
+footer .copyright {
+	padding: 5px;
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 180%;
+}
+
+/*home styles*/
+body.home aside {
+	padding: 20px;
+	float: left;
+	width: 95%;
+	position: relative;
+	margin: 60px 2.5%;
+	background-image: url("../images/(8).jpg");
+	background-size: cover;
+}
+body.home .video, .intro-txt {
+	float: left;
+	margin: 2%;
+	margin-top: 60px;
+	padding: 1.3em;
+}
+body.home .intro-txt {
+	width: 50%;
+	text-align: center;
+	font-size: 200%;
+	line-height: 1.6em;
+	word-spacing: 0.35em;
+	color: whitesmoke;
+}
+body.home .intro-txt a {
+	color: gray;
+}
+body.home .video {
+	background: black;
+	box-shadow: 0 0 15px gray;
+	width: 40%;
+	float: left;
+	position: absolute;
+	margin: 0;
+	right: 4%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+body.home .video > * {
+	padding: 5px;
+	color: white;
+	width: 100%;
+	float: left;
+}
+body.home .popup-close-btn {
+	position: fixed;
+	z-index: 111;
+	background: pink;
+	color: black;
+	font-size: 30px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-family: tahoma;
+	text-align: center;
+	right: 32.5%;
+	top: 20%;
+	font-weight: bold;
+	cursor: pointer;
+	transition: 0.4s cubic-bezier(.68,-0.55,.27,1.55) font-size;
+}
+body.home .popup-close-btn:hover {
+	font-size: 40px;
+}
+body.home #close-popup1:checked ~ .popup-container, #close-popup1:checked + .popup-close-btn {
+	display: none;
+}
+body.home #close-popup1 {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+body.home .popup-container {
+	font-size: 23px;
+	z-index: 110;
+	width: 100vw;
+	height: 100vh;
+	color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+body.home .popup-container .content {
+	border-radius: 20px;
+	position: absolute;
+	text-align: center;
+	width: 40%;
+	right: 30%;
+	padding: 55px;
+	top: 25%;
+	background: black;
+	box-shadow: 0 0 20px 3px #b8b8b8;
+}
+body.home .slider-wrapper, main {
+	clear: both;
+}
+body.home .slider-wrapper {
+	float: left;
+	width: 100%; 
+    top: 40px;
+    position: relative;
+    height: 400px;
+}
+body.home .slider {
+    width: 850px;
+    margin: auto;
+    height: 100%;
+    overflow: hidden;
+    border: solid black;
+    position: relative;
+}
+body.home .slider > .cover {
+ 	background-image: linear-gradient(rgba(0, 0, 0, 0), gray);
+ 	position: absolute;
+ 	z-index: 2;
+ 	width: 100%;
+ 	height: 25%;
+ 	bottom: 0;
+ 	left: 0;
+ }
+body.home .slider div.images {
+    height: 100%;
+    width: 400%;
+    position: relative;
+    animation-name: slider;
+    animation-delay: 5s;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.4, 1, 0, 1);
+}
+body.home .slider div.images > * {
+	background: black;
+	color: whitesmoke;
+	font-size: 500%;
+	text-align: center;
+	font-family: monospace;
+	line-height: 5;
+    min-height: 100%;
+    width: 25%;
+    float: left;
+    border-right: solid 20px black;
+    border-left: solid 20px black;
+}
+@keyframes slider {
+    0%   {margin-left: 0%;}
+    20%  {margin-left: -100%;}
+    40%  {margin-left: -100%;}
+    60%  {margin-left: -200%;}
+    80%  {margin-left: -200%;}
+    100% {margin-left: 0%}
+}
+body.home main {
+	color: white;
+	width: 100%;
+	margin: 20px auto;
+}
+body.home main > section > h2 {
+	padding: 1em;
+	width: 100%;
+	float: left;
+	font-size: 250%;
+	color: black;
+	text-align: center;
+}
+body.home main > section:first-child > .img {
+	float: left;
+	width: 95%;
+	margin: 2.5%;
+	background: black;
+}
+body.home main > section:first-child > .img img{
+	width: 100%;
+}
+body.home main > .outstanding {
+	padding: 20px;
+	float: left;
+	width: 100%;
+}
+body.home main > .outstanding article.img {
+	text-align: center;
+	color: white;
+	font-size: 120%;
+	font-weight: bold;
+	border-radius: 5px;
+	width: 45%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 40px;
+	box-shadow: 0 0 4px 4px #131313;;
+	height: 300px;
+	float: left;
+	background: black;
+	overflow: hidden;
+	min-width: 245px;
+	position: relative;
+}
+body.home main > .outstanding article.img:last-child {
+	width: 95%;
+	height: 600px;
+}
+body.home main > .outstanding article.img img {
+	max-height: 75%;
+	max-width: 90%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	/*-ms-transform: translate(-50%, -50%);*/
+	transform: translate(-50%, -50%);
+}
+body.home main > .outstanding article.img p {
+	float: left;
+	width: 100%;
+}
+/*drivers page styles*/
+body.drivers main section {
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+	margin-top: 20px;
+}
+body.drivers main section:first-child {
+	padding: 2rem;
+	border: dashed;
+}
+body.drivers main section h2 {
+	font-size: 250%;
+	padding: 10px;
+}
+body.drivers main section ul {
+	list-style: square;
+	padding: 0 10em;
+}
+body.drivers main section ul li {
+	font-size: 220%;
+}
+body.drivers main section.drivers {
+	text-align: center;
+}
+body.drivers main section.drivers > article {
+	padding: 10px;
+	position: relative;
+	background: #000;
+	box-shadow: 0 0 5px 2px #000;
+	height: 380px;
+	width: 45%;
+	margin: 50px 2.5% 0 2.5%;
+	float: left;
+}
+body.drivers main section.drivers > article img {
+	max-width: 100%;
+	max-height: 100%;
+}
+body.drivers main section.drivers > article > * {
+	padding: 10px;
+	float: left;
+	width: 100%;
+}
+body.drivers main section.drivers > article > .img {
+	height: 86%;
+}
+body.drivers main section.drivers > article > .name {
+	font-weight: bolder;
+	padding: 14px;
+	height: 14%;
+	color: #fcfcfc;
+	/*text-shadow:0 0 6px black;*/
+	font-size: 220%;
+}
+body.drivers main section.drivers > article .details {
+	opacity: 0.1;
+	background: black;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	height: 100%;
+	color: #fafafa;
+	position: absolute;
+	transition: 0.4s;
+	cursor: pointer;
+}
+body.drivers main section.drivers > article .details:hover {
+	opacity: 0.8;
+}
+body.drivers main section.drivers > article .details > div {
+	font-size: 150%;
+	float: left;
+	width: 100%;
+	height: 20%;
+	margin-top: 8%;
+}
+body.drivers main section.drivers > article .details .title {
+	padding: 20px;
+	font-size: 190%;
+	font-weight: bold;
+}
+body.drivers main section.drivers > article .details span {
+	display: block;
+}
+/*contact us page styles*/
+body.contact form {
+	width: 65%;
+	overflow: hidden;
+	padding: 20px;
+	background: black;
+	margin: auto;
+	margin-top: 70px;
+}
+body.contact form .form-group {
+	padding: 10px;
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+}
+body.contact form .form-group > * {
+	float: left;
+	width: 100%;
+}
+body.contact form .form-group > label {
+	cursor: pointer;
+	padding: 10px;
+	padding-left: 0;
+	font-size: 150%;
+	color: white;
+}
+body.contact form .form-group > input {
+	padding: 6px;
+	height: 40px;
+	border: solid  0;
+	transition: 0.5s;
+	font-size: 150%;
+}
+body.contact form .form-group > input:focus,  #message:focus {
+	background: #000;
+	color: white;
+	border: solid 1.5px white;
+}
+body.contact form .form-group:last-child {
+}
+body.contact #submit {
+	background: #fefefe;
+	padding: 30px;
+	line-height: 0;
+	border: solid 1.5px black;
+	cursor: pointer;
+	font-size: 180%;
+	box-shadow: inset 0 0 20px 7px #000;
+}
+body.contact #submit:hover {
+	box-shadow: none;
+	font-size: 210%;
+	font-weight: bold;
+}
+body.contact #message {
+	height: 150px;
+	resize: none;
+}
+/*question and answers page style*/
+body.q-and-a main > section {
+	padding: 10px;
+	width: 70%;
+	margin:  auto;
+}
+body.q-and-a main section article {
+	font-family: monospace;
+	background: black;
+	color: white;
+	border:  solid 1.5px;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 150%;
+	margin-top: 20px;
+}
+body.q-and-a main section article > h3 {
+	text-transform: uppercase;
+	background: whitesmoke;
+	color: black;
+}
+body.q-and-a main section article.unanswered section:last-child {
+	color: #AAA;
+}
+body.q-and-a main section article > section {
+	margin-top: 10px;
+	margin-left: 5%;
+}
+body.q-and-a main section article section p {
+	padding-left: 50px;
+}
+body.q-and-a main section > h2 {
+	padding: 20px;
+	font-size: 200%;
+	text-align: center;
+}
+body.q-and-a form > * {
+	margin-top: 20px;
+	width: 100%;
+	float: left;
+}
+body.q-and-a form textarea {
+	padding: 10px;
+	resize: none;
+	font-size: 170%;
+	height: 160px;
+	border:  solid 1.5px;
+	outline: none;
+	border:  solid black;
+}
+body.q-and-a form textarea:focus {
+	background: black;
+	color: white;
+}
+body.q-and-a form input {
+	background: black;
+	color: white;
+	font-size: 160%;
+	cursor: pointer;
+	height: 60px;
+	border:  solid black;
+}
+body.q-and-a form input:hover {
+	font-weight: bold;
+	background: white;
+	color: black;
+}
+/*register page styles*/
+body.register main section {
+	padding: 20px;
+	border-bottom: solid 2px;
+}
+body.register main section > h2 {
+	text-transform: uppercase;
+	font-size: 200%;
+	padding: 15px;
+}
+body.register main section ul {
+	list-style: square;
+}
+body.register main section ul, section ol {
+	margin-left: 4%;
+	font-size: 170%;
+}
+body.register main section ul li, section ol li {
+	padding: 0.4rem;
+}
+body.register .booking-form {
+	width: 60%;
+	overflow: hidden;
+	margin:  auto;
+	padding: 15px;
+	font-size: 150%;
+}
+body.register .booking-form > h2 {
+	text-transform: uppercase;
+	font-size: 200%;
+	text-align: center;
+	padding: 10px;
+}
+body.register .booking-form .form-group {
+	padding: 5px;
+	float: left;
+	width: 100%;
+}
+body.register .booking-form .form-group select {
+	cursor: pointer;
+	padding: 5px;
+	font-size: 100%;
+	height: 45%;
+	width: 60%;
+	border:  solid black;
+}
+body.register .booking-form .form-group > * {
+	float: left;
+}
+body.register .booking-form .form-group label {
+	cursor: pointer;
+}
+body.register .booking-form .form-group > label, body.register .booking-form legend {
+	font-weight: bold;
+	font-size: 150%;
+	padding: 20px 0 5px 0;
+	float: left;
+	width: 100%;
+}
+body.register .booking-form .form-group .radio label {
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 0.2em;
+	width: 100%;
+}
+body.register .booking-form .form-group .radio {
+	margin: 0.5em 2em;
+	position: relative;
+	display: block;
+	float: none;
+	padding: 7px 0 0 40px;
+	width: 150px;
+	overflow: hidden;
+}
+body.register .booking-form .form-group .radio input:checked + .button > .child {
+	display: block;
+}
+body.register .booking-form .form-group .radio .button{
+	border: solid 1.5px black;
+	float: right;
+	width: 1em;
+	height: 1em;
+	padding: 2px;
+}
+body.register .booking-form .form-group .radio .button .child{
+	width: 100%;
+	height: 100%;
+	background: black;
+	display: none;
+}
+body.register .booking-form input[type="text"], .booking-form input[type="submit"], .booking-form input[type="password"],  .booking-form input[type="email"] {
+	width: 100%;
+	float: left;
+	font-size: 120%;
+	height: 50px;
+	padding: 10px ;
+	border:  solid 4px black;
+
+}
+body.register .booking-form input[type="text"]:focus, .booking-form input[type="submit"]:focus, .booking-form input[type="password"]:focus,  .booking-form input[type="email"]:focus {
+	background: black;
+	border-color: white;
+	color: white;
+}
+body.register .booking-form input[type="submit"] {
+	background: black;
+	height: 60px;
+	font-weight: bold;
+	color: white;
+	outline: solid black;
+	margin-top: 40px;
+	border: solid;
+	cursor: pointer;
+}
+body.register .booking-form input[type="submit"]:hover, body.register .booking-form input[type="submit"]:focus {
+	border:  solid black;
+	font-size: 150%;
+	letter-spacing: 0.5rem;
+	text-decoration: underline;
+	outline: solid gray 4px;
+}
+/*about us page styles*/
+body.about main {
+	text-align: center;
+	line-height: 3.5em;
+	margin-top: 40px;
+	padding: 4em;
+	background-image: url("../images/(8).jpg");
+	background-size: cover;
+	color: white;
+}
+body.about main > h2{
+	padding: 20px;
+	text-align: center;
+	font-size: 250%;
+}
+body.about main p {
+	font-size: 200%;
+	font-family: cursive;
+}
+/*media queries*/
+@media screen and (max-width: 900px) {
+	body.contact form {
+		width: 80%;
+	}
+	body.home .video, body.home .intro-txt {
+		width: 100% ;
+		position: static !important;
+		transform: none;
+	}
+	body.register .booking-form {
+	    width: 100%;
+	}
+	body.drivers main .drivers {
+		width: 100%;
+		padding: 5px;
+	}
+	body.drivers main section.drivers > article {
+		width: 90%;
+	}
+	body header > .search {
+		width: 100%;
+		position: relative;
+	}
+	body.home header + *, body.q-and-a header + * {
+		margin-top: 195px;
+	}
+	footer > * {
+		width: 100% !important;
+	}
+	body.home .slider-wrapper {
+		height: 61.8vw;
+		width: 100%;
+		margin: 0;
+	}
+	body.home .slider {
+		width: 100%;
+	}
+	main > .outstanding .img {
+		width: 80% !important;
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		height: 300px !important;
+	}
+}
+@media screen and (max-width: 800px) {
+	body.home .booking-form {
+		width: 100%;
+	}
+	body.home .popup-container .content {
+		width: 80%;
+		left: 10%;
+	}
+	body.home .popup-close-btn {
+		right: 15.5%;
+	}
+	main > section {
+		width: 100%;
+	}
+	body {
+		font-size: 10px;
+		padding: 0;
+	}
+	nav > div, nav > div > a {
+		float: left;
+		width: 100%;
+	}
+	body.contact form {
+		width: 100%;
+	}
+	footer .links-section > .content > div {
+		display: inline-block;
+		padding: 0;
+	}
+
+}
